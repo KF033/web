@@ -110,7 +110,100 @@
                                     </li>
                                 </ul>
                             </fieldset>
+                            <fieldset>
+                                <legend>¿Qué temas te interesan?</legend>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" name="tema[]" id="interes-1" value="Informática" />
+                                        <label for="interes-1">Informática</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="tema[]" id="interes-2" value="Programación" />
+                                        <label for="interes-2">Programación</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="tema[]" id="interes-3" value="Diseño gráfico" />
+                                        <label for="interes-3">Diseño gráfico</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="tema[]" id="interes-4" value="Inteligencia Artificial" />
+                                        <label for="interes-4">Inteligencia Artificial</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="tema[]" id="interes-5" value="Marketing digital" />
+                                        <label for="interes-5">Marketing digital</label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <fieldset>
+                                <legend>¿Tienes experiencia previa?</legend>
+                                <ul>
+                                    <li>
+                                        <input type="radio" name="experiencia" id="experiencia-si" value="Si" />
+                                        <label for="experiencia-si">SI</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="" id="experiencia-no" value="No" />
+                                        <label for="experiencia-no">No</label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <fieldset>
+                                <legend>¿En qué modalidad quieres hacer el curso?</legend>
+
+                                <!-- El atributo 'for' debe coincidir con el 'id' del select -->
+                                <label for="modalidad">Selecciona una opción:</label>
+
+                                <select id="modalidad" name="modalidad">
+                                    <option value="" disabled selected>-- Elige una modalidad --</option>
+                                    <option value="presencial">Presencial</option>
+                                    <option value="online">Online</option>
+                                    <option value="semipresencial">Semi-presencial</option>
+                                </select>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>¿Qué días tienes disponibilidad?</legend>
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" name="día[]" id="día-1" value="Lunes" />
+                                        <label for="día-1">Lunes</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="día[]" id="día-2" value="Martes" />
+                                        <label for="día-2">Martes</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="día[]" id="día-3" value="Diseño gráfico" />
+                                        <label for="día-3">Miércoles</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="día[]" id="día-4" value="Inteligencia Artificial" />
+                                        <label for="interes-4">Jueves</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="día[]" id="día-5" value="Marketing digital" />
+                                        <label for="día-5">Viernes</label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                            <legend>¿Cómo has conocido el curso?</legend>
+                            <select name="referencia" required="">
+                                <option value="" disabled selected>--Seleccione una opción</option>
+                                <option value="1">Redes sociales</option>
+                                <option value="2">Internet</option>
+                                <option value="3">Amigos o Familiares</option>
+                                <option value="4">Publicidad</option>
+                            </select>
                         </fieldset>
+                        <ul class="enviar">
+                            <li>
+                                <input type="submit" value="Enviar" id="enviar" />
+                            </li>
+                            <li>
+                                <input type="reset" value="Borrar" />
+                            </li>
+                        </ul>
                     </form>
                 </article>
             </section>
