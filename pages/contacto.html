@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="../assets/css/MenuIcons.css" />
         <!-- <link rel="stylesheet" href="assets/css/varios.css" /> -->
         <link rel="stylesheet" href="../assets/css/carrusel.css" />
-
+        <link rel="stylesheet" href="../assets/css/formularios.css" />
         <link rel="stylesheet" href="../assets/css/estilos.css" />
 
         <!-- Título de la pestaña del navegador -->
@@ -86,51 +86,62 @@
 
                 <article>
                     <h3>Formulario de contacto</h3>
-                    <form action="enviado.html" method="post" class="form" id="form">...</form>
-                    <fieldset>
-                        <legend>Datos personales</legend>
-                        <ul>
-                            <li>
-                                <label for="name">Nombre</label>
-                                <input type="text" name="name" id="name" placeholder="Tu nombre" required />
-                            </li>
+                    <form action="enviado.html" method="post" enctype="multipart/form-data" class="form" id="form">
+                        ...
+                        <fieldset>
+                            <legend>Datos personales</legend>
+                            <ul>
+                                <li>
+                                    <label for="name">Nombre</label>
+                                    <input type="text" name="name" id="name" placeholder="Tu nombre" required />
+                                </li>
 
-                            <li>
-                                <label for="email">E-mail</label>p
-                                <input type="email" name="email" id="name" placeholder="Correo electrónico" required />
-                            </li>
+                                <li>
+                                    <label for="email">E-mail</label>p
+                                    <input type="email" name="email" id="name" placeholder="Correo electrónico" required />
+                                </li>
 
-                            <li><label for="tlfno">Teléfono</label><input type="tel" id="tlfno" placeholder="Teléfono" required /></li>
+                                <li><label for="tlfno">Teléfono</label><input type="tel" id="tlfno" placeholder="Teléfono" required /></li>
 
-                            <li>
-                                <label for="edad">Edad</label>
-                                <input type="edad" placeholder="Tu edad" />
-                            </li>
+                                <li>
+                                    <label for="edad">Edad</label>
+                                    <input type="edad" placeholder="Tu edad" />
+                                </li>
 
-                            <li>
-                                <input type="radio" name="coche" value="si" id="coche" />
-                                <label for="coche">Coche propio Si</label>
-                            </li>
+                                <li>
+                                    <input type="radio" name="coche" value="si" id="coche" />
+                                    <label for="coche">Coche propio Si</label>
+                                </li>
 
-                            <li>
-                                <input type="radio" name="coche" id="coche-no" value="No" />
-                                <label for="coche-no">Coche propio No</label>
-                            </li>
+                                <li>
+                                    <input type="radio" name="coche" id="coche-no" value="No" />
+                                    <label for="coche-no">Coche propio No</label>
+                                </li>
 
-                            <li>
-                                <input type="checkbox" name="acepto" id="acepto" />
-                                <label for="acepto">
-                                    Acepto el tratamiento de mis datos personales. Más información en
-                                    <a href="../legal/lopd.html" target="LOPD">Política de tratamiento de datos personales</a>
-                                </label>
-                            </li>
+                                <li>
+                                    <input type="checkbox" name="acepto" id="acepto" />
+                                    <label for="acepto">
+                                        Acepto el tratamiento de mis datos personales. Más información en
+                                        <a href="../legal/lopd.html" target="LOPD">Política de tratamiento de datos personales</a>
+                                    </label>
+                                </li>
 
-                            <li class="textarea">
-                                <label for="mensaje">Tu mensaje</label>
-                                <textarea placeholder="Escribe tu mensaje aquí" name="mensaje" cols="30" rows="5 " id="mensaje" required></textarea>
-                            </li>
-                        </ul>
-                    </fieldset>
+                                <li class="textarea">
+                                    <label for="mensaje">Tu mensaje</label>
+                                    <textarea placeholder="Escribe tu mensaje aquí" name="mensaje" cols="30" rows="5 " id="mensaje" required></textarea>
+                                </li>
+                            </ul>
+                            <p id="errores"></p>
+                            <ul class="Enviar">
+                                <li>
+                                    <input type="submit" value="Enviar" id="enviar" />
+                                </li>
+                                <li>
+                                    <input type="reset" value="Borrar" />
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form>
                 </article>
             </section>
         </main>

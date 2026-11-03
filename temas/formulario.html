@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <!-- Juego de caracteres de casi todos los idiomas humanos (incluidos ñ, tildes ...) -->
+    <meta charset="utf-8" />
+    <!-- Escala inicial y renderizado _responsive_ por el ancho del dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compatibilidad con Microsoft Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Indéxame NO y sígueme NO -->
+    <meta name="robots" content="noIndex, noFollow" />
+    <!-- Breve descripción del sitio que se verá en los resultados de búsqueda -->
+    <meta name="description" content="Sitio web de prueba elaborado en el curso de Confección y Publicación de Páginas Web (IFCD0110). Unidad Formativa UF1303, Elaboración de hojas de estilos" />
+    <!-- Ruta al favicon -->
+    <!-- Utilícese una hoja de estilos Normalize -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
+    <!-- hover.css de ianlunn de estilos -->
+    <link rel="stylesheet" href="https://ianlunn.github.io/Hover/css/hover.css" />
+    <!-- <link rel="stylesheet" href="../Flexbox/assets/css/hover.css" /> -->
+    <link rel="stylesheet" href="/assets/css/tipografía.css" />
+    <!-- Ruta a las hojas de estilos -->
+    <link rel="stylesheet" href="../assets/css/visibility.css" />
+    <link rel="stylesheet" href="../assets/css/variables.css" />
+    <link rel="stylesheet" href="../assets/css/transforms.css" />
+    <link rel="stylesheet" href="../assets/css/imagenes.css" />
+    <link rel="stylesheet" href="../assets/css/MenuIcons.css" />
+    <!-- <link rel="stylesheet" href="assets/css/varios.css" /> -->
+    <link rel="stylesheet" href="../assets/css/carrusel.css" />
+    <link rel="stylesheet" href="../../assets/css/formularios.css" />
+    <link rel="stylesheet" href="../assets/css/estilos.css" />
+    <body>
+        <header>
+            <a href="../index.html" class="no-border" title="Página principal">
+                <figure class="logo"></figure>
+                <h1 class="pechado">Elaboración de hojas de estilos (UF1303)</h1>
+            </a>
+            <!-- Slogan -->
+            <p class="pechado">Curso de Confección Publicación de Páginas Web</p>
+        </header>
+        <nav class="principal" aria-label="Navegación principal">
+            <h2 class="pechado">Menú Principal</h2>
+            <input id="icon-menu" name="icon-menu" type="checkbox" />
+            <label for="icon-menu" class="icon-menu" aria-label="Abrir/Cerrar menú">Menú</label>
+            <ul>
+                <li>
+                    <a href="#">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Temas</a>
+                    <ul>
+                        <li>
+                            <a href="textos.html">Textos</a>
+                        </li>
+                        <li>
+                            <a href="imagenes.html">Imagenes</a>
+                        </li>
+                        <li>
+                            <a href="formulario.html">Formulario</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="legal/legal.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="agua">
+            <!-- <a href="./assets/logoKF033.webp">Logo KF</a> -->
+            <section>
+                <header class="img-befores portada">
+                    <h2>formularios</h2>
+                </header>
+                <article>
+                    <h3>Formularios varios</h3>
+                    <form action="../pages/enviado.html" method="get" class="form" enctype="multipart/form-data">
+                        <fieldset>
+                            <legend>Formulario de inscripción a un curso</legend>
+
+                            <fieldset>
+                                <legend>Nivel de conocimientos</legend>
+
+                                <ul>
+                                    <li>
+                                        <input type="radio" name="nivel" id="nivel-0" value="0" />
+                                        <label for="nivel-0">principiante</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="nivel" id="nivel-1" value="1" />
+                                        <label for="nivel-1">Intermedio</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="nivel" id="nivel-2" value="2" />
+                                        <label for="nivel-2">Avanzado</label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </fieldset>
+                    </form>
+                </article>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>
