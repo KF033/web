@@ -91,6 +91,19 @@
                     <form action="../pages/enviado.html" method="get" class="form" enctype="multipart/form-data">
                         <fieldset>
                             <legend>Formulario de inscripción a un curso</legend>
+                            <fieldset>
+                                <legend>Datos personales</legend>
+                                <ul>
+                                    <li>
+                                        <label for="edad">Edad</label>
+                                        <input type="number" name="edad" id="edad" min="18" max="120" />
+                                    </li>
+                                    <li>
+                                        <label for="precio-vivienda">Elige un precio de vivienda</label>
+                                        <input type="range" name="precio-vivienda" id="precio-vivienda" min="20000" step="5000" max="750000" value="100000" />
+                                    </li>
+                                </ul>
+                            </fieldset>
 
                             <fieldset>
                                 <legend>Nivel de conocimientos</legend>
