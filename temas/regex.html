@@ -435,7 +435,46 @@
                                         Admitir letras, números, espacios,
                                         comas, puntos, guiones y barras.
                                     -->
-                                    <input type="text" id="direccion" name="direccion" maxlength="" title="" required />
+                                    <input type="text" id="direccion" name="direccion" maxlength="" title="La dirección debe tener entre 5 y 80 caracteres, admite letras, números, espacios, comas, puntos, guiones y barras" required pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ ,.\-]{5,80}" minlength="5" maxlength="80" />
+                                    <ul>
+                                        <li>
+                                            <label for="tipo_via">Tipo de vía:</label>
+                                            <select id="tipo_via" name="tipo_via" required>
+                                                <option value="" disabled selected>-- Selecciona --</option>
+                                                <option value="Calle">Calle</option>
+                                                <option value="Avenida">Avenida</option>
+                                                <option value="Plaza">Plaza</option>
+                                                <option value="Paseo">Paseo</option>
+                                                <option value="Carretera">Carretera</option>
+                                                <option value="Camino">Camino</option>
+                                                <option value="Lugar">Lugar</option>
+                                            </select>
+                                        </li>
+
+                                        <li>
+                                            <label for="nombre_via">Nombre de la vía / Calle:</label>
+                                            <!-- Entre 3 y 50 caracteres: letras, números, espacios, comas, puntos y guiones -->
+                                            <input type="text" id="nombre_via" name="nombre_via" required minlength="3" maxlength="50" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚçÇñÑÜü ,.\-]{3,50}" title="Introduce el nombre de la calle, avenida, etc. Entre 3 y 50 caracteres." />
+                                        </li>
+
+                                        <li>
+                                            <label for="numero">Número / Portal:</label>
+                                            <!-- Admite números (12), números con letra (14B) o s/n (sin número) -->
+                                            <input type="text" id="numero" name="numero" required maxlength="10" pattern="[0-9a-zA-ZáéíóúÁÉÍÓÚñÑ /.\-]{1,10}" title="Número, portal o s/n. Máximo 10 caracteres." />
+                                        </li>
+
+                                        <li>
+                                            <label for="piso_puerta">Piso / Departamento / Puerta:</label>
+                                            <!-- Opcional: Admite texto corto como "3ºB", "4", "Depto 2" -->
+                                            <input type="text" id="piso_puerta" name="piso_puerta" maxlength="20" pattern="[0-9a-zA-ZáéíóúÁÉÍÓÚñÑºª /.\-]{0,20}" title="Piso, departamento o puerta (Ej: 3º B). Máximo 20 caracteres." />
+                                        </li>
+
+                                        <li>
+                                            <label for="datos_adicionales">Datos adicionales / Indicaciones:</label>
+                                            <!-- Opcional: Para urbanizaciones, bloques, aclaraciones de entrega, etc. -->
+                                            <input type="text" id="datos_adicionales" name="datos_adicionales" maxlength="80" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚçÇñÑÜü ,.\-]{0,80}" title="Bloque, urbanización o aclaraciones. Máximo 80 caracteres." />
+                                        </li>
+                                    </ul>
                                 </li>
 
                                 <li>
@@ -445,7 +484,7 @@
                                         PISTA:
                                         Entre 2 y 50 letras, espacios y guiones.
                                     -->
-                                    <input type="text" id="localidad" name="localidad" title="" required />
+                                    <input type="text" id="localidad" name="localidad" title="La localidad debe tener entre 2 y 50 letras, espacios y guiones" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ \-{2,50}" minlength="2" maxlength="50" />
                                 </li>
 
                                 <li>
@@ -457,7 +496,7 @@
                                         Los códigos postales españoles empiezan
                                         por un número entre 01 y 52.
                                     -->
-                                    <input type="text" id="cp" name="cp" placeholder="27001" minlength="" maxlength="" title="" required />
+                                    <input type="text" id="cp" name="cp" placeholder="27001" minlength="5" maxlength="5" title="El código postal debe tener exactamente 5 números entre 01 y 52" required pattern="(0[1-9]|[1-4][0-9]|5[0-2][0-9]{3})" title="El código postal solo debe contener los 5 números" />
                                 </li>
 
                                 <li>
@@ -468,7 +507,63 @@
                                         Dos cifras entre 01 y 52.
                                         Ejemplo: 27 para Lugo.
                                     -->
-                                    <input type="text" id="provincia" name="provincia" maxlength="" title="" required />
+                                    <input type="text" id="provincia" name="provincia" maxlength="2" minlength="2" title="El código de provincia debe tener exactamente dos cifras entre 01 y 52 " required pattern="(0[1-9]|[1-4][0-9]|5[0-2])" />
+
+                                    <select id="select_provincia" name="select_provincia" required title="Seleccione una provincia de la lista">
+                                        <option value="" disabled selected hidden>Seleccione una provincia...</option>
+                                        <option value="01">01 - Álava</option>
+                                        <option value="02">02 - Albacete</option>
+                                        <option value="03">03 - Alicante</option>
+                                        <option value="04">04 - Almería</option>
+                                        <option value="05">05 - Ávila</option>
+                                        <option value="06">06 - Badajoz</option>
+                                        <option value="07">07 - Balears, Illes</option>
+                                        <option value="08">08 - Barcelona</option>
+                                        <option value="09">09 - Burgos</option>
+                                        <option value="10">10 - Cáceres</option>
+                                        <option value="11">11 - Cádiz</option>
+                                        <option value="12">12 - Castellón</option>
+                                        <option value="13">13 - Ciudad Real</option>
+                                        <option value="14">14 - Córdoba</option>
+                                        <option value="15">15 - Coruña, A</option>
+                                        <option value="16">16 - Cuenca</option>
+                                        <option value="17">17 - Girona</option>
+                                        <option value="18">18 - Granada</option>
+                                        <option value="19">19 - Guadalajara</option>
+                                        <option value="20">20 - Gipuzkoa</option>
+                                        <option value="21">21 - Huelva</option>
+                                        <option value="22">22 - Huesca</option>
+                                        <option value="23">23 - Jaén</option>
+                                        <option value="24">24 - León</option>
+                                        <option value="25">25 - Lleida</option>
+                                        <option value="26">26 - La Rioja</option>
+                                        <option value="27">27 - Lugo</option>
+                                        <option value="28">28 - Madrid</option>
+                                        <option value="29">29 - Málaga</option>
+                                        <option value="30">30 - Murcia</option>
+                                        <option value="31">31 - Navarra</option>
+                                        <option value="32">32 - Ourense</option>
+                                        <option value="33">33 - Asturias</option>
+                                        <option value="34">34 - Palencia</option>
+                                        <option value="35">35 - Las Palmas</option>
+                                        <option value="36">36 - Pontevedra</option>
+                                        <option value="37">37 - Salamanca</option>
+                                        <option value="38">38 - Santa Cruz de Tenerife</option>
+                                        <option value="39">39 - Cantabria</option>
+                                        <option value="40">40 - Segovia</option>
+                                        <option value="41">41 - Sevilla</option>
+                                        <option value="42">42 - Soria</option>
+                                        <option value="43">43 - Tarragona</option>
+                                        <option value="44">44 - Teruel</option>
+                                        <option value="45">45 - Toledo</option>
+                                        <option value="46">46 - Valencia</option>
+                                        <option value="47">47 - Valladolid</option>
+                                        <option value="48">48 - Bizkaia</option>
+                                        <option value="49">49 - Zamora</option>
+                                        <option value="50">50 - Zaragoza</option>
+                                        <option value="51">51 - Ceuta</option>
+                                        <option value="52">52 - Melilla</option>
+                                    </select>
                                 </li>
                                 <!-- Agregar un select con provincias españolas buscadas de internet -->
                             </ul>
