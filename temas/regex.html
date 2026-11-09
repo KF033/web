@@ -103,13 +103,13 @@
                             <legend>Nivel Básico</legend>
                             <ul>
                                 <li>
-                                    <label for="nombre">Nombre</label>
+                                    <label for="nombre">Nombre y apellidos</label>
                                     <!-- 
                                         REQUISITOS:
                                         - Entre 3 y 50 caracteres.
                                         - Solo letras del alfabeto español (con tildes, diéressis y ñ) y espacios.
                                     -->
-                                    <input type="text" id="nombre" name="nombre" required title="El nombre solo debe contener letras, espacios en blanco o guión normal" pattern="[a-zA-ZáéíóúÑÁÉÍÓÚçÇñÑÜü\]{3,}" maxlength="50" />
+                                    <input type="text" id="nombre" name="nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜçÇ\- ]{3,}" title="El nombre sólo debe contener letras, espacios en blanco o guión normal" maxlength="50" value="Pepe" />
                                 </li>
                                 <li>
                                     <label for="cp">Código postal</label>
@@ -118,7 +118,7 @@
                                         - Exactamente 5 dígitos.
                                         - Los dos primeros dígitos (provincia) van del 01 al 52.
                                     -->
-                                    <input type="text" id="cp" name="cp" pattern="[0-5]{1}[0-9]{4}" title="El código postal solo debe contener los 5 números" />
+                                    <input type="text" id="cp" name="cp" pattern="(0[1-9]|[1-4][0-9]|5[0-2])[0-9]{3}" title="Introduzca sólo los 5 números de su código postal" value="27003" />
                                 </li>
                                 <li>
                                     <label for="movil">Teléfono móvil</label>
@@ -127,7 +127,7 @@
                                         - Exactamente 9 dígitos, sin espacios ni prefijo.
                                         - Debe empezar por 6 o 7.
                                     -->
-                                    <input type="tel" id="movil" name="movil" required title="El número de teléfono móvil español debe ser los 9 dígitos sin espacion ni guiones" pattern="[6-7]{1}[0-9]{8}" />
+                                    <input type="tel" id="movil" name="movil" title="El número del teléfono movil español deben ser los 9 dígitos sin espacios ni guiones" pattern="[6-7]{1}[0-9]{8}" value="666777999" />
                                 </li>
                                 <li>
                                     <label for="color">Color hexadecimal</label>
@@ -135,7 +135,7 @@
                                         REQUISITOS:
                                         - Almohadilla (#) seguida de exactamente 6 caracteres hexadecimales (0-9, a-f).
                                     -->
-                                    <input type="text" id="color" name="color" required title="El código de color debe comenzar con # y contener los dígitos de color " pattern="# [0-9a-fA-F]{6}" />
+                                    <input type="text" id="color" name="color" title="El código de color debe comenzar con '#' y contener los 6 dígitos de color" pattern="#[0-9a-fA-F]{6}" value="#000000" />
                                 </li>
                             </ul>
                         </fieldset>
@@ -157,8 +157,9 @@
                                         NOTA: pattern solo comprueba el FORMATO. Calcular si la letra
                                         es la correcta (resto de dividir entre 23) exige JavaScript o PHP, p.ej.
                                     -->
-                                    <input type="text" id="dni" name="dni" required title="El dni debe ser el número sin espacios ni puntos ni guiones y la letra en mayúscula" pattern="\d{8}[A-Z]{1}" />
+                                    <input type="text" id="dni" name="dni" title="El DNI debe ser el número sin espacios ni puntos ni guiones y la letra en mayúscula" pattern="\d{8}[A-Z]{1}" value="12345678L" />
                                 </li>
+
                                 <li>
                                     <label for="matricula">Matrícula de coche</label>
                                     <!-- 
@@ -166,8 +167,9 @@
                                         - 4 dígitos y 3 consonantes (sin vocales ni Ñ ni Q).
                                         - Puede llevar un espacio o un guion entre números y letras (a votar).
                                     -->
-                                    <input type="text" id="matricula" name="matricula" required title="Matricula debe ser 4 dítos y las tres letras en mayúsculas, separadas entre si con espacion o guión o todo junto o no con espacio o guión" pattern="\d{4}[bcdfghjklmnprstvwxyz]{3}" />
+                                    <input type="text" id="matricula" name="matricula" title="La matrícula debe ser los 4 dígitos y las 3 letras en mayúsculas, separados entre sí con espacio o guión o todo junto" pattern="\d{4}[\s\-]?[BCDFGHJKLMNPRSTVWXYZ]{3}" value="1234BCD" />
                                 </li>
+
                                 <li>
                                     <label for="hora">Hora (24 h)</label>
                                     <!-- 
@@ -182,7 +184,7 @@
                                         REQUISITOS:
                                         - Número entero, o con coma y 1 o 2 decimales. Sin punto ni símbolo €.
                                     -->
-                                    <input type="text" id="precio" name="precio" required inputmode="decimal" title="El precio tiene un máximo de 2 decimales" pattern="[0-9]*\.[0-9]{1,2}?" min="0.01" step="0.01" value="50" />
+                                    <input type="number" id="precio" name="precio" inputmode="decimal" title="El precio tiene un máximo de 2 decimales separado con un punto. Sin espacios ni símbolo de moneda" min="0.01" step="0.01" max="1000000" value="50" />
                                     <!-- Requisitos:
                                      numero entero, con cona y 1 o 2 decimales. sin punto ni símbolo €
                                      Explicacion
@@ -202,7 +204,7 @@
                             <legend>Nivel Avanzado</legend>
                             <ul>
                                 <li>
-                                    <label for="fecha">Fecha</label>
+                                    <label for="fecha">Fecha de nacimiento</label>
                                     <!-- REQUISITOS:
                                         - Formato dd/mm/aaaa con barras.
                                         - Día de 01 a 31, mes de 01 a 12, año de 4 dígitos.
@@ -210,7 +212,7 @@
                                         para eso hace falta JavaScript o type="date".
                                     -->
                                     <!-- <input type="text" id="fecha" name="fecha" required title="Formato dd/mm/aaaa. Ejemplo: 04/11/2026" pattern="([012][0-9]3[01])/(0[1-9][1][012])/([12][09]{3})" /> -->
-                                    <input type="date" min="1900-0101" max="2028-01-01" />
+                                    <input type="date" min="1900-01-01" max="2028-01-01" value="2026-01-01" />
                                 </li>
                                 <li>
                                     <label for="usuario">Nombre de usuario</label>
@@ -279,7 +281,7 @@
                                         Los números pueden comenzar por cero.
                                         La letra debe corresponder al resto módulo 23.
                                     -->
-                                    <input type="text" id="dni" name="dni" placeholder="12345678Z" maxlength="9" title="" required />
+                                    <input type="text" id="dninie" name="dninie" placeholder="12345678Z" maxlength="9" pattern="[0-9X-Z]\d{7}[A-Z]" title="Introduzca un DNI o NIE válido. Sólo números y letra en mayúsculas. Sin espacios, ni puntos, ni guiones" required />
                                 </li>
 
                                 <li>
@@ -290,7 +292,7 @@
                                         Comienza por X, Y o Z.
                                         Después tiene 7 números y una letra.
                                     -->
-                                    <input type="text" id="nie" name="nie" placeholder="X1234567L" maxlength="9" title="" />
+                                    <input type="text" id="dninie" name="dninie" placeholder="12345678Z" maxlength="9" pattern="[0-9X-Z]\d{7}[A-Z]" title="Introduzca un DNI o NIE válido. Sólo números y letra en mayúsculas. Sin espacios, ni puntos, ni guiones" required />
                                 </li>
 
                                 <li>
@@ -301,7 +303,7 @@
                                         Entre 2 y 30 caracteres.
                                         Admitir letras españolas, acentos y espacios.
                                     -->
-                                    <input type="text" id="nombre" name="nombre" maxlength="30" title="" required />
+                                    <input type="text" id="nome" name="nome" maxlength="30" placeholder="Nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜçÇ ]{2,}" title="Escriba su nombre tal y como aparece en su DNI o NIE" required />
                                 </li>
 
                                 <li>
@@ -312,7 +314,7 @@
                                         Entre 2 y 60 caracteres.
                                         Admitir letras, acentos, espacios y guiones.
                                     -->
-                                    <input type="text" id="apellidos" name="apellidos" maxlength="60" required />
+                                    <input type="text" id="apellido1" placeholder="Primer Apellido" name="apellido1" minlength="2" maxlength="60" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑüÜçÇ\- ]{2,}" title="Escriba su primer apellido tal y como aparece en su DNI o NIE" required />
                                 </li>
 
                                 <li>
@@ -323,7 +325,7 @@
                                         Debe ser una fecha comprendida entre 18 y 100 años.
                                         min y max son restricciones de fecha, no patrones.
                                     -->
-                                    <input type="date" id="nacimiento" name="nacimiento" min="" max="" required />
+                                    <input type="date" id="fnacimiento" name="fnacimiento" min="1926-01-01" max="2008-01-01" title="Marque la fecha de nacimiento que aparece en su DNI o NIE" required />
                                 </li>
 
                                 <li>
